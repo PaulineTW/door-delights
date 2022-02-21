@@ -12,6 +12,19 @@ Brand color: #e67e22
 
 ## Door Delights Website Content
 
+## Sections
+
+- Navigation
+- Hero
+- Featured in
+- How it works
+- Meals (and list of diets)
+- Testimonials + Gallery
+- Pricing + Features
+- Call to action
+- Footer
+
+
 ### Summary
 
 The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs. We have delivered 250,000+ meals last year!
@@ -126,18 +139,3 @@ Careers
 Recipe directory
 Help center
 Privacy & terms
-
-
-###############################
-
-## Sections
-
-- Navigation
-- Hero
-- Featured in
-- How it works
-- Meals (and list of diets)
-- Testimonials + Gallery
-- Pricing + Features
-- Call to action
-- Footer
