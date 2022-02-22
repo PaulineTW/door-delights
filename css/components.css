@@ -18,10 +18,16 @@
   margin-bottom: 3.2rem;
 }
 
-.heading-secondary{
+.heading-secondary {
   font-size: 4.4rem;
   line-height: 1.2;
   margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3.6rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
 }
 
 .subheading {
@@ -101,17 +107,12 @@
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-
   /* margin-bottom: 9.6rem; */
 }
 
-/* .grid:last-child {
-  margin-bottom: 0;
-} */
-
-/* .grid:not(:last-child) {
-  margin-bottom: 9.6rem;
-} */
+.grid--center-v {
+  align-items: center;
+}
 
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
@@ -128,7 +129,3 @@
 .grid--5-cols {
   grid-template-columns: repeat(5, 1fr);
 }
-
-/* .grid--center-v {
-  align-items: center;
-} */
