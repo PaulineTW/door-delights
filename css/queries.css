@@ -1,11 +1,8 @@
 /* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 
-
 /**************************/
 /* BELOW 1344px (Smaller desktops) */
 /**************************/
-
-/* 1366px/16px = 84em */
 
 @media (max-width: 84em) {
   .hero {
@@ -17,10 +14,7 @@
   }
 
   .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
-  padding: 1.6rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -28,11 +22,9 @@
 /* BELOW 1200px (Landscape Tablets) */
 /**************************/
 
-/* 1200px/16px = 75em */
-
 @media (max-width: 75em) {
   html {
-    /* 9px / 16px = 0.5625 = 56.25% */
+    /* 9px / 16px  */
     font-size: 56.25%;
   }
 
@@ -70,11 +62,9 @@
 /* BELOW 944px (Tablets) */
 /**************************/
 
-/* 944px/16px = 59em */
-
 @media (max-width: 59em) {
   html {
-    /* 8px / 16px = 0.50 = 50% */
+    /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
 
@@ -84,10 +74,7 @@
     gap: 6.4rem;
   }
 
-  .hero-text-box {
-    text-align: center;
-  }
-
+  .hero-text-box,
   .hero-img-box {
     text-align: center;
   }
@@ -102,15 +89,15 @@
   }
 
   .logos img {
-  height: 2rem;
+    height: 2.4rem;
   }
 
   .step-number {
-  font-size: 7.4rem;
+    font-size: 7.4rem;
   }
 
   .meal-content {
-  padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
   }
 
   .section-testimonials {
@@ -118,10 +105,11 @@
   }
 
   .gallery {
-  grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
     grid-template-columns: 3fr 2fr;
   }
 
@@ -133,13 +121,13 @@
     margin-top: 1.2rem;
   }
 
-  /* MOBILE navigation */
+  /* MOBILE NAVIGATION */
   .btn-mobile-nav {
-  display: block;
+    display: block;
   }
 
   .main-nav {
-    background-color: rgba(255, 255, 255, 0.966);
+    background-color: rgba(255, 255, 255, 0.97);
     position: absolute;
     top: 0;
     left: 0;
@@ -153,7 +141,10 @@
     transition: all 0.5s ease-in;
 
     /* Hide navigation */
-    /* 1) hide it visually */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
+    /* 1) Hide it visually */
     opacity: 0;
 
     /* 2) Make it unaccessible to mouse and keyboard */
@@ -168,7 +159,6 @@
     pointer-events: auto;
     visibility: visible;
     transform: translateX(0);
-
   }
 
   .nav-open .icon-mobile-nav[name="close-outline"] {
@@ -191,30 +181,23 @@
 }
 
 /**************************/
-/* BELOW 704px (Smaller Tablets) */
+/* BELOW 704px (Smaller tablets) */
 /**************************/
 
-/* 704px/16px = 44em */
-
 @media (max-width: 44em) {
- .grid--3-cols,
- .grid--4-cols  {
-   grid-template-columns: repeat(2, 1fr);
- }
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
- .diets {
-   grid-column: 1 / -1;
-   justify-self: center;
- }
+  .diets {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
 
   .heading-secondary {
     margin-bottom: 4.8rem;
   }
-
-  .pricing-plan {
-    width: 100%;
-  }
-
 
   .pricing-plan {
     width: 100%;
@@ -236,10 +219,82 @@
   }
 }
 
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
 
-/* - Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
 
-/* - Spacing system (px)
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+}
+
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
