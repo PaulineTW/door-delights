@@ -670,6 +670,7 @@ body {
 .footer-logo {
   display: block;
   margin-bottom: 3.2rem;
+  /* width: 1.6rem; */
 }
 
 .social-links {
