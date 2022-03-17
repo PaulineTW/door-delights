@@ -158,7 +158,8 @@ body {
   display: none;
 }
 
-/* MOBILE */
+/* STICKY NAV */
+
 .sticky .header {
   position: fixed;
   top: 0;
