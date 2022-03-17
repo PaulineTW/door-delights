@@ -1,23 +1,27 @@
-// Set Current year in Copyright
-const yearEl = document.querySelector(".year");
-const currentYear = new Date().getFullYear()
-yearEl.textContent = currentYear
+// Set current year
+const yearEl = document.querySelector('.year');
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
 
-// Make mobile navigation functionality
+///////////////////////////////////////////////////////////
+// Make mobile navigation work
+
 const btnNavEl = document.querySelector('.btn-mobile-nav');
-const headerEl = document.querySelector("header");
+const headerEl = document.querySelector('.header');
 
-btnNavEl.addEventListener("click", function () {
-  headerEl.classList.toggle("nav-open")
-})
+btnNavEl.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
+});
 
-// Smooth scrolling animation (in some Safari versions)
-const allLinks = document.querySelectorAll("a:link");
+///////////////////////////////////////////////////////////
+// Smooth scrolling animation
+
+const allLinks = document.querySelectorAll('a:link');
+
 allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
     const href = link.getAttribute('href');
-    console.log(href);
 
     // Scroll back to top
     if (href === '#')
@@ -25,18 +29,50 @@ allLinks.forEach(function (link) {
         top: 0,
         behavior: 'smooth',
       });
-    // Scroll to other link section
-    if (href !== "#" && href.startsWith("#")){
+
+    // Scroll to other links
+    if (href !== '#' && href.startsWith('#')) {
       const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({behavior: "smooth"});
+      sectionEl.scrollIntoView({ behavior: 'smooth' });
     }
-    // Close mobile nav
-    if (link.classList.contains("main-nav-link"))
-      headerEl.classList.toggle("nav-open");
-  })
-})
+
+    // Close mobile naviagtion
+    if (link.classList.contains('main-nav-link'))
+      headerEl.classList.toggle('nav-open');
+  });
+});
+
+///////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector('.section-hero');
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    // Add/remove sticky when get to section-hero
+
+    if (ent.isIntersecting === false) {
+      document.body.classList.add('sticky');
+    }
+
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove('sticky');
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: '-80px',
+  }
+);
+obs.observe(sectionHeroEl);
 
 
+///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");
@@ -55,54 +91,3 @@ function checkFlexGap() {
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }
 checkFlexGap();
-
-/*
-.no-flexbox-gap .main-nav-list li:not(:last-child) {
-  margin-right: 4.8rem;
-}
-
-.no-flexbox-gap .list-item:not(:last-child) {
-  margin-bottom: 1.6rem;
-}
-
-.no-flexbox-gap .list-icon:not(:last-child) {
-  margin-right: 1.6rem;
-}
-
-.no-flexbox-gap .delivered-faces {
-  margin-right: 1.6rem;
-}
-
-.no-flexbox-gap .meal-attribute:not(:last-child) {
-  margin-bottom: 2rem;
-}
-
-.no-flexbox-gap .meal-icon {
-  margin-right: 1.6rem;
-}
-
-.no-flexbox-gap .footer-row div:not(:last-child) {
-  margin-right: 6.4rem;
-}
-
-.no-flexbox-gap .social-links li:not(:last-child) {
-  margin-right: 2.4rem;
-}
-
-.no-flexbox-gap .footer-nav li:not(:last-child) {
-  margin-bottom: 2.4rem;
-}
-
-@media (max-width: 75em) {
-  .no-flexbox-gap .main-nav-list li:not(:last-child) {
-    margin-right: 3.2rem;
-  }
-}
-
-@media (max-width: 59em) {
-  .no-flexbox-gap .main-nav-list li:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 4.8rem;
-  }
-}
-*/
